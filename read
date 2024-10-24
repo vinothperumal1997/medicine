@@ -1,0 +1,4 @@
+npm create vite@latest app_name -- --template react-ts
+npm install bootstrap
+npm install react-router-dom
+npm install @reduxjs/toolkit react-redux
