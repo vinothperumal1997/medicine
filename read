@@ -2,3 +2,9 @@ npm create vite@latest app_name -- --template react-ts
 npm install bootstrap
 npm install react-router-dom
 npm install @reduxjs/toolkit react-redux
+ npm i react-icons
+
+
+slide
+ npm install react-slick slick-carousel
+npm install --save-dev @types/react-slick

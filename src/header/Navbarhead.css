@@ -1,0 +1,60 @@
+.icon-gradient {
+    font-size: 50px; 
+    padding-right: 10px; 
+    color: #4169E1;
+  }
+  .main-search{
+    padding-left: 80px;
+  }
+  .nav-icon
+  {
+    font-size: 40px;
+    padding-left: 10px;
+  }
+  
+  
+  .heart:hover ,
+  .cart:hover{
+    color: #4169E1; /* Change icon color on hover for better visibility */
+    font-weight: 900;
+    font-size: 60px;
+  }
+  .f-top {
+    position: relative; /* Positioning context for absolute elements */
+  }
+  
+  .n-top {
+    position: absolute; 
+    top: -5px; 
+    right: -13px; 
+    background-color: red; 
+    color: white; 
+    border-radius: 100%; 
+    font-size: 10px; 
+    padding: 5px 5px;
+    height: 25px !important;
+    width: 25px !important;
+    text-align: center;
+    
+
+
+  
+    font-weight: bold; 
+  }
+
+  .f-search{
+    position: relative;
+  }
+  .search-icon{
+    position: absolute; 
+    top: 2px; 
+    right: 10px; 
+    padding: 3px 8px;
+    font-size: 35px; 
+    color: rgb(166, 151, 151);
+
+  }
+  .input.form-control
+  {
+    width: 400px !important;
+  }

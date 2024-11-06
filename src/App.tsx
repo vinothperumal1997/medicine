@@ -1,35 +1,65 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import DisplaySlide from './component/DisplaySlide';
+import NavScrollExample from './header/Navbarhead';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container';
+
+// Define categories with title and image properties
+
+
+const categories = [
+  {
+    id: 1,
+    title: 'Category 1',
+    image: 'https://via.placeholder.com/150', // URL for the image
+  },
+  {
+    id: 2,
+    title: 'Category 2',
+    image: 'https://via.placeholder.com/150',
+  },
+  {
+    id: 3,
+    title: 'Category 3',
+    image: 'https://via.placeholder.com/150',
+  },
+  {
+    id: 4,
+    title: 'Category 3',
+    image: 'https://via.placeholder.com/150',
+  },
+  {
+    id: 5,
+    title: 'Category 3',
+    image: 'https://via.placeholder.com/150',
+  },
+  {
+    id: 6,
+    title: 'Category 3',
+    image: 'https://via.placeholder.com/150',
+  },
+  {
+    id: 7,
+    title: 'Category 3',
+    image: 'https://via.placeholder.com/150',
+  },
+  {
+    id: 8,
+    title: 'Category 3',
+    image: 'https://via.placeholder.com/150',
+  },
+];
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <NavScrollExample />
+      <Container>
+        <DisplaySlide categories={categories} />
+      </Container>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -66,3 +66,11 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.dis-slide
+{
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  user-select: none;
+  
+}
