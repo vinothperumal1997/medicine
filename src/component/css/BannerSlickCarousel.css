@@ -1,0 +1,114 @@
+.banner-slide {
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    height: 55vh;
+    color: #1f2937;
+    padding: 20px;
+    /* text-align: center; */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+  }
+  
+  .banner-slide-1 {
+    background-image: url('../assets/med.png'); /* Replace with your own image path */
+  }
+  
+  .banner-slide-2 {
+    background-image: url('../assets/med.png'); /* Replace with your own image path */
+  }
+  
+  .banner-slide-3 {
+    background-image: url('../assets/med.png'); /* Replace with your own image path */
+  }
+  
+  .banner-content {
+    max-width: 650px;
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    padding: 30px;
+    border-radius: 8px;
+  }
+  
+  .shipping-badge {
+    background-color: #fbbf24;
+    color: #1f2937;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    color: #1f2937;
+    margin: 10px 0;
+  }
+  
+  .highlight {
+    color: #4169e0;
+  }
+  
+  p {
+    color: #1f2937;
+    margin: 10px 0 20px;
+    font-size: 1.2rem;
+  }
+  
+  .shop-now-btn {
+    background-color: #1f2937;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .shop-now-btn:hover {
+    background-color: #111827;
+  }
+
+  .slick-dots
+  {
+    bottom: 5px !important;
+  }
+  
+  /* Responsive Styles */
+
+  @media (max-width: 1200px) {
+    h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+  }
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 950px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 0.9rem;
+    }
+    .shop-now-btn {
+      padding: 6px 12px;
+      font-size: 0.9rem;
+    }
+    div{
+        text-align: start;
+    }
+  }
+  

@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "./DisplaySlide.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { PRODUCT_API_URL } from "../constants";
 
 type Category = {
  thumbnail: any;
@@ -11,42 +12,14 @@ type Category = {
   image:string;
 };
 
-const NextArrow = ({ onClick }: { onClick?: () => void }) => (
-    <div className="arrow next-arrow" onClick={onClick}>
-      <span>&gt;</span>
-    </div>
-  );
-  
-  const PrevArrow = ({ onClick }: { onClick?: () => void }) => (
-    <div className="arrow prev-arrow" onClick={onClick}>
-      <span>&lt;</span>
-    </div>
-  );
 
-// const NextArrow = (props: any) => {
-//     const { onClick } = props;
-//     return (
-//       <div className="arrow next-arrow" onClick={onClick}>
-//         <span> &gt;</span>
-//       </div>
-//     );
-//   };
-  
-//   const PrevArrow = (props: any) => {
-//     const { onClick } = props;
-//     return (
-//       <div className="arrow prev-arrow" onClick={onClick}>
-//         <span>&lt;</span>
-//       </div>
-//     );
-//   };
 
 const DisplaySlide = () => {
   const [categories, setCategories] = useState<Category[]>([]);
 
   useEffect(() => {
     axios
-      .post("https://ecom-shop-api.vercel.app/products",{store:"medicine"})
+      .post(`${PRODUCT_API_URL}`,{store:"medicine"})
       .then((response) => {
         setCategories(response.data.data); 
         console.log(response.data)
@@ -63,10 +36,9 @@ const DisplaySlide = () => {
     slidesToShow: 6,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 30004545,
+    autoplaySpeed: 2000,
     pauseOnHover: true,
-    // nextArrow: <NextArrow />,
-    // prevArrow: <PrevArrow />,
+  
     
     responsive: [
         {
@@ -108,15 +80,16 @@ const DisplaySlide = () => {
   };
 
   return (
-    <div className="slider-container">
+    <div className="slider-container" >
+    <h5>Featured Catrgories</h5>
       <Slider {...settings}>
-        {categories.map((category, index) => (
+        {categories.map((data, index) => (
           <div className="card" key={index}>
             <div className="card-image">
-              <img src={category.image.thumbnail} alt={category.name} />
+              <img src={data.image.thumbnail} alt={data.name} />
             </div>
             
-            <h3 className="card-title">{category.name.substring(0, 30)}</h3>
+            <h3 className="card-title">{data.name.substring(0, 30)}</h3>
           </div>
         ))}
       </Slider>
