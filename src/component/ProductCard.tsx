@@ -1,44 +1,66 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./css/ProductCard.css";
+import { PRODUCT_API_URL } from '../constants';
+import axios from 'axios';
+import { Link } from 'react-router-dom'
 
 
 // Define the Product type
 interface Product {
-  imgSrc: string;
+
+
+  image: {
+    thumbnail: string;
+  };
   category: string;
-  productName: string;
+  name: string;
   rating: number;
   reviewsCount: number;
+  sale_price: number;
   price: number;
-  originalPrice: number;
+  min_price:number;
+  max_price:number;
+  slug:string;
+  id:number;
 }
 
 const ProductCard: React.FC = () => {
-  // Sample products data
-  const products: Product[] = new Array(12).fill({
-    imgSrc: 'https://via.placeholder.com/150',
-    category: 'Snack & Munchies',
-    productName: "Haldiram's Sev Bhujia",
-    rating: 3.5,
-    reviewsCount: 149,
-    price: 18,
-    originalPrice: 24,
-  });
+
+  const [Product, setProduct] = useState<Product[]>([]);
+
+  
+
+  useEffect(() => {
+    axios
+      .post(`${PRODUCT_API_URL}products`,{store:"medicine"})
+      .then((response) => {
+        setProduct(response.data.data); 
+        console.log(response.data)
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
+
 
   return (
-<div 
-  className="container py-4" 
-  style={{ "--bs-gutter-x": "1rem !important" }}
->      <div className="row">
-        {products.map((product, index) => (
+<div>
+  {
+     Product.length === 0 ?
+     <h1 className='loading'>Loading....</h1>
+     :<div>
+        <div className="row">
+        {Product.map((product, index) => (
           <div className="col-12 col-sm-6 col-md-4 col-lg-custom mb-4" key={index}>
             <div className="card card-product">
               <div className="sale-badge">Sale</div>
+              <Link to={`/productdetail/${product.slug}`}  key={product.id}>
               <div className="product-img">
-                <img src={product.imgSrc} alt="Product Image" />
+                <img src={product.image.thumbnail} alt="Product Image" />
               </div>
-              <div className="category">{product.category}</div>
-              <div className="product-name">{product.productName}</div>
+              </Link>
+              {/* <div className="category">{product.category}</div> */}
+              <div className="product-name">{product.name}</div>
               <div className="rating">
                 <span className={`fa fa-star ${product.rating >= 1 ? '' : 'off'}`}></span>
                 <span className={`fa fa-star ${product.rating >= 2 ? '' : 'off'}`}></span>
@@ -51,7 +73,9 @@ const ProductCard: React.FC = () => {
               </div>
               <div className="g-price-add">
                 <div className="price">
-                  ${product.price} <span className="original-price">${product.originalPrice}</span>
+                  ${product.sale_price ?? product.price ?? product.min_price } <span className="original-price">{product.max_price !== (product.sale_price ?? product.price ?? product.min_price)
+    ? `${'$'+product.max_price}`
+    : null}</span>
                 </div>
                 <button className="add-btn">+ Add</button>
               </div>
@@ -59,6 +83,8 @@ const ProductCard: React.FC = () => {
           </div>
         ))}
       </div>
+      </div>
+  }
     </div>
   );
 };

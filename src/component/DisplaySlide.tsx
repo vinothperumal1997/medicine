@@ -1,15 +1,16 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import "./DisplaySlide.css";
+import "./css/DisplaySlide.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { PRODUCT_API_URL } from "../constants";
 
 type Category = {
- thumbnail: any;
+  original: string;
   name: string;
   image:string;
+
 };
 
 
@@ -19,7 +20,7 @@ const DisplaySlide = () => {
 
   useEffect(() => {
     axios
-      .post(`${PRODUCT_API_URL}`,{store:"medicine"})
+      .post(`${PRODUCT_API_URL}categories`,{store:"medicine"})
       .then((response) => {
         setCategories(response.data.data); 
         console.log(response.data)
@@ -80,21 +81,26 @@ const DisplaySlide = () => {
   };
 
   return (
-    <div className="slider-container" >
-    <h5>Featured Catrgories</h5>
-      <Slider {...settings}>
-        {categories.map((data, index) => (
-          <div className="card" key={index}>
-            <div className="card-image">
-              <img src={data.image.thumbnail} alt={data.name} />
-            </div>
-            
-            <h3 className="card-title">{data.name.substring(0, 30)}</h3>
-          </div>
-        ))}
-      </Slider>
-    </div>
-  );
+    <>
+        
+
+        <div className="slider-container" >
+        <h5 style={{textAlign:'start'}}>Featured Catrgories</h5>
+
+          <Slider {...settings}>
+            {categories.map((data, index) => (
+              <div className="card dispaly-custom"  key={index}>
+                <div className="card-image">
+                  <img src={data.image.original} alt={data.name} />
+                </div>
+                
+                <h3 className="card-title">{data.name.substring(0, 30)}</h3>
+              </div>
+            ))}
+          </Slider>
+        </div>
+    </>
+      );
 };
 
 export default DisplaySlide;
