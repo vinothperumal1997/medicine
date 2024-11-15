@@ -14,14 +14,17 @@
   
   .banner-slide-1 {
     background-image: url('../assets/med.png'); /* Replace with your own image path */
+    max-height: 350px;
   }
   
   .banner-slide-2 {
     background-image: url('../assets/med.png'); /* Replace with your own image path */
+    max-height: 350px;
   }
   
   .banner-slide-3 {
     background-image: url('../assets/med.png'); /* Replace with your own image path */
+    max-height: 350px;
   }
   
   .banner-content {

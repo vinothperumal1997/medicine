@@ -13,12 +13,12 @@
   }
   
   
-  .heart:hover ,
+  /* .heart:hover ,
   .cart:hover{
-    color: #4169E1; /* Change icon color on hover for better visibility */
+    color: #4169E1; 
     font-weight: 900;
     font-size: 60px;
-  }
+  } */
   .f-top {
     position: relative; /* Positioning context for absolute elements */
   }
@@ -58,3 +58,7 @@
   {
     width: 400px !important;
   }
+  .heart
+{
+
+}

@@ -1,0 +1,114 @@
+.single-productimg
+{
+    border: 2px solid rgb(161, 161, 161);
+    text-align: center;
+    margin: 10px 20px 10px 20px;
+    border-radius: 20px;
+    background-color: aqua;
+}
+.single-productimg img
+{
+    max-width: 300px;
+    max-height: 500px;
+    min-height: 350px;
+}
+.discount
+{
+    font-size: 1rem;
+    color: rgb(160, 11, 11);
+    margin-left: 20px;
+}
+.mrp{
+    color: rgb(161, 161, 161);
+    text-decoration: line-through;
+
+}
+.mesure
+{
+    margin-top: 40px ;
+}
+.mesurebox
+{
+    padding: 10px 20px 10px 20px;
+    border: 2px solid rgb(161, 161, 161);
+    background-color: antiquewhite;
+    color: rgb(161, 161, 161); 
+    margin: 5px 3px 5px 3px;
+    border-radius: 10px;
+
+}
+.counter-btn
+{
+    padding: 5px 10px 5px 10px;
+    border: 2px solid rgb(161, 161, 161);
+}
+.counter-value
+{
+    border: 2px solid rgb(161, 161, 161);
+    padding: 6px 10px 7px 10px;
+
+
+}
+.counter
+{
+    margin: 20px 0px 0px 5px;
+
+}
+.actionbutton
+{
+    margin: 20px 0px 0px 5px;
+}
+.addtocart {
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: white;
+    background-color: #4169E1;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+}
+
+.addtocart:hover {
+    background-color: rgb(25, 25, 180); /* Darker shade on hover */
+}
+
+.addwish
+{
+    padding:10px 10px 10px 10px ;
+    background-color: rgb(208, 209, 197);
+    font-size: 3rem;
+    margin-left: 20px;
+    text-align: center;
+    border-radius: 10px;
+
+}
+
+.product-info {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .info-row {
+    display: flex;
+    margin-bottom: 8px;
+  }
+  
+  .label {
+    font-weight: bold;
+    margin-right: 8px;
+    width: 120px; /* Fixed width to align labels */
+    color: #555;
+  }
+  
+  .value {
+    color: #333;
+  }
+  
+  .free-pickup {
+    color: #888; /* Gray color for additional note */
+    font-style: italic;
+  }
+  

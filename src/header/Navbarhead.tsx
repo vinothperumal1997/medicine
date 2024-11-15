@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
@@ -10,10 +10,17 @@ import './Navbarhead.css';
 import { CiHeart, CiUser } from 'react-icons/ci';
 import { MdAddShoppingCart } from 'react-icons/md';
 import { Link } from 'react-router-dom'; // Use Link to handle routing
+import CartModal from '../component/CartModal';
 
 const NavScrollExample: React.FC = () => {
   const isMobile = window.innerWidth < 992;
   const isDesktop = window.innerWidth >= 992;
+  const [showModal, setShowModal] = useState(false);
+
+  const handleShow = () => setShowModal(true);
+  const handleClose = () => setShowModal(false);
+  const [cartnumber,setCartnumber] = useState('0');
+
 
   return (
     <>
@@ -45,13 +52,19 @@ const NavScrollExample: React.FC = () => {
 
             <div className="d-flex align-items-center">
               <div className="f-top d-inline-block">
+
                 <CiHeart className="nav-icon heart" />
-                <span className="n-top cart-number">99</span>
+                <span className="n-top cart-number">{cartnumber}</span>
+
               </div>
               <CiUser className="nav-icon profile" />
               <div className="f-top d-inline-block">
+              <Nav.Link onClick={handleShow}  className='heart' >
+
                 <MdAddShoppingCart className="nav-icon cart" />
                 <span className="n-top cart-number">5</span>
+                </Nav.Link>
+
               </div>
             </div>
 
@@ -85,6 +98,8 @@ const NavScrollExample: React.FC = () => {
           </Nav>
         </Container>
       ) : null}
+            <CartModal show={showModal} handleClose={handleClose} />
+
     </>
   );
 };

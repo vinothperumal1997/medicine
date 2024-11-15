@@ -54,11 +54,10 @@ const ProductCard: React.FC = () => {
           <div className="col-12 col-sm-6 col-md-4 col-lg-custom mb-4" key={index}>
             <div className="card card-product">
               <div className="sale-badge">Sale</div>
-              <Link to={`/productdetail/${product.slug}`}  key={product.id}>
+            
               <div className="product-img">
                 <img src={product.image.thumbnail} alt="Product Image" />
               </div>
-              </Link>
               {/* <div className="category">{product.category}</div> */}
               <div className="product-name">{product.name}</div>
               <div className="rating">
@@ -77,7 +76,10 @@ const ProductCard: React.FC = () => {
     ? `${'$'+product.max_price}`
     : null}</span>
                 </div>
-                <button className="add-btn">+ Add</button>
+                <Link to={`/productdetail/${product.slug}`}   key={product.id}>
+                <button  className="add-btn">+ Add</button>
+                </Link>
+
               </div>
             </div>
           </div>

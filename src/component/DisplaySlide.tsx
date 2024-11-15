@@ -84,7 +84,7 @@ const DisplaySlide = () => {
     <>
         
 
-        <div className="slider-container" >
+        <div className="slider-container dispalyslide-container" >
         <h5 style={{textAlign:'start'}}>Featured Catrgories</h5>
 
           <Slider {...settings}>

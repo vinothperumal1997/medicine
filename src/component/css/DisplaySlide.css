@@ -204,3 +204,9 @@ div{
 /* .slick-track{
   text-align: center;
 } */
+
+
+.dispalyslide-container
+{
+  text-align: center !important;
+}

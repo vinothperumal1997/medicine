@@ -8,6 +8,8 @@ import Bannerslide from './component/Bannerslide';
 import ProductCard from './component/ProductCard';
 import ContentRead from './component/ContentRead';
 import ProductDetail from './component/Productdetail';
+import CartModal from './component/CartModal';
+
 
 // Define a type for your app routes
 const appRoutes: RouteObject[] = [
@@ -23,6 +25,7 @@ const appRoutes: RouteObject[] = [
             <DisplaySlide />
             <ProductCard />
             <ContentRead />
+            <CartModal />
           </Container>
         ),
       },
