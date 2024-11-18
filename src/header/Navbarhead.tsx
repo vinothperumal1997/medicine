@@ -5,26 +5,24 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { InputGroup } from 'react-bootstrap';
-import { FaCartPlus, FaSearch } from "react-icons/fa";
+import { FaCartPlus, FaSearch  } from "react-icons/fa";
 import './Navbarhead.css';
-import { CiHeart, CiUser } from 'react-icons/ci';
-import { MdAddShoppingCart } from 'react-icons/md';
+import { CiHeart } from 'react-icons/ci';
+
 import { Link } from 'react-router-dom'; // Use Link to handle routing
-import CartModal from '../component/CartModal';
+import CartAction from './CartAction';
+import { BiUser } from "react-icons/bi";
+import WishAction from './Wishlist';
 
 const NavScrollExample: React.FC = () => {
   const isMobile = window.innerWidth < 992;
   const isDesktop = window.innerWidth >= 992;
-  const [showModal, setShowModal] = useState(false);
-
-  const handleShow = () => setShowModal(true);
-  const handleClose = () => setShowModal(false);
-  const [cartnumber,setCartnumber] = useState('0');
+  
 
 
   return (
     <>
-      <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar expand="lg" className="bg-body-tertiary sticky-top">
         <Container>
           <FaCartPlus className="icon-gradient" />
           <Navbar.Brand href="#" className="fs-1">Medicine</Navbar.Brand>
@@ -52,18 +50,17 @@ const NavScrollExample: React.FC = () => {
 
             <div className="d-flex align-items-center">
               <div className="f-top d-inline-block">
+              {/* <Nav.Link as={Link} to="/wishlistpage">
 
                 <CiHeart className="nav-icon heart" />
-                <span className="n-top cart-number">{cartnumber}</span>
+                <span className="n-top cart-number">0</span>
+              </Nav.Link>  */}
+              <WishAction />
 
               </div>
-              <CiUser className="nav-icon profile" />
+              <BiUser  className="nav-icon profile" />
               <div className="f-top d-inline-block">
-              <Nav.Link onClick={handleShow}  className='heart' >
-
-                <MdAddShoppingCart className="nav-icon cart" />
-                <span className="n-top cart-number">5</span>
-                </Nav.Link>
+             <CartAction />
 
               </div>
             </div>
@@ -87,18 +84,21 @@ const NavScrollExample: React.FC = () => {
       </Navbar>
 
       {isDesktop ? (
-        <Container>
-          <Nav className="me-auto">
-          <Nav.Link as={Link} to="/">Home</Nav.Link> 
-                <Nav.Link as={Link} to="/about">About</Nav.Link> 
-                <Nav.Link as={Link} to="/categories">Categories</Nav.Link> 
-                <Nav.Link as={Link} to="/products">Products</Nav.Link> 
-                <Nav.Link as={Link} to="/contacts">Contacts</Nav.Link> 
-
-          </Nav>
+        <Navbar bg="light" expand="lg" >
+              <Container>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="me-auto">
+          <Nav.Link as={Link} to="/">Home</Nav.Link>
+          <Nav.Link as={Link} to="/about">About</Nav.Link>
+          <Nav.Link as={Link} to="/categories">Categories</Nav.Link>
+          <Nav.Link as={Link} to="/products">Products</Nav.Link>
+          <Nav.Link as={Link} to="/contacts">Contacts</Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
         </Container>
+    </Navbar>
       ) : null}
-            <CartModal show={showModal} handleClose={handleClose} />
 
     </>
   );

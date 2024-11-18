@@ -4,7 +4,7 @@
     text-align: center;
     margin: 10px 20px 10px 20px;
     border-radius: 20px;
-    background-color: aqua;
+    background-color: #F4F5F7;
 }
 .single-productimg img
 {
@@ -111,4 +111,8 @@
     color: #888; /* Gray color for additional note */
     font-style: italic;
   }
-  
+  .mesure
+  {
+    display: flex;
+    flex-wrap: wrap;
+  }

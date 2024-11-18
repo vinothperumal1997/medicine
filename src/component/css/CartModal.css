@@ -5,8 +5,8 @@
         margin-top: 2px !important;
     }
 
-    .modal-content {
-      min-height: 99vh;
+    .modal-content , .modal-body {
+      min-height: 99vh !important;
     }
 
     /* Fixed modal header */
@@ -21,7 +21,6 @@
 /* Hide scrollbar for modal body */
 .modal-body {
   overflow-y: hidden !important;
-  max-height: 300px; /* Adjust as needed for modal height */
 }
 
 .modal-body::-webkit-scrollbar {
@@ -31,4 +30,76 @@
 .modal-body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+.productcartimg img
+{
+  max-width: 100px;
+  max-height: 100px;
+}
+.cmpc
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+.productcartimg
+{
+padding-right: 20px;
+}
+.pcname,
+.pcmesure,
+.pcremove
+{
+  padding: 2px ;
+  margin: 0px;
+}
+.pcname{
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 500;
+  
+}
+.productcartdetails
+{
+  margin-right: 10px;
+}
+.pcmesure,
+.pcremove
+{
+  color: rgb(87, 90, 92);
+}
+.saleprice-pc
+{
+  color: black;
+  font-weight: 600;
+  
+}
+.pcprice
+{
+  justify-content: center;
+  align-items: center;
+}
+.buttoncm
+{
+  display: flex;
+  justify-content: space-between;
+}
+.cs-shopping , .uc-cart
+{
+  padding: 10px;
+  color: #fff;
+  outline: none;
+  border-radius: 10px;
+  border: none;
+}
+.cs-shopping
+{
+  background-color: rgb(11, 164, 11);
+
+}
+.uc-cart{
+    background-color: rgb(3, 0, 43);
+
 }

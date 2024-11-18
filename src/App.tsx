@@ -8,7 +8,8 @@ import Bannerslide from './component/Bannerslide';
 import ProductCard from './component/ProductCard';
 import ContentRead from './component/ContentRead';
 import ProductDetail from './component/Productdetail';
-import CartModal from './component/CartModal';
+import Wishlist from './component/WishPage';
+// import CartModal from './component/CartModal';
 
 
 // Define a type for your app routes
@@ -25,13 +26,13 @@ const appRoutes: RouteObject[] = [
             <DisplaySlide />
             <ProductCard />
             <ContentRead />
-            <CartModal />
+            {/* <CartModal /> */}
           </Container>
         ),
       },
 
       {
-        path: '/about',
+        path: '/products',
         element: (
           <Container>
             
@@ -41,8 +42,14 @@ const appRoutes: RouteObject[] = [
       },
 
       {
-        path: '/productdetail/:slug',
+        path: '/products/:slug',
         element: <ProductDetail />
+    },
+
+    {
+      path:'/wishlistpage',
+      element:<Wishlist />
+
     },
      
     ],
